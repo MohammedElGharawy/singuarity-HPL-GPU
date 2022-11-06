@@ -16,7 +16,7 @@
       chdir: /root/trial/dep
       cmd: tar xfz go1.19.3.linux-amd64.tar.gz
 
-  - name: loading module file
+  - name: loading module file (placeholder)
     shell:
       cmd: module load ./modules/go
 
@@ -30,13 +30,17 @@
       regexp: '^(.*)INSTALL_PREFIX =(.*)$'
       line: 'INSTALL_PREFIX = /root/trial/install'
 
-  - name: installing squashfs-tools
-    shell: |
-      cd /root/trial/dep/squashfs-tools-4.5.1/squashfs-tools/
-      make
-      make install
+  - name: installing squashfs-tools [1/2]
+    shell:
+      chdir: /root/trial/dep/squashfs-tools-4.5.1/squashfs-tools/
+      cmd: make
+      
+  - name: installing squashfs-tools [2/2]
+    shell:
+      chdir: /root/trial/dep/squashfs-tools-4.5.1/squashfs-tools/
+      cmd: make install
 
-  - name: load module file
+  - name: load module file (placeholder)
     shell:
       chdir: /root/trial/dep
       cmd: module load ./modules/squashfs-tools
@@ -49,15 +53,19 @@
   - name: Extract singularity
     shell:
       chdir: /root/trial/dep/
-      cmd: tar -xfz singularity-ce-3.9.7.tar.gz -C /root/trial/dep/go/apps/src/github.com/syslabs
+      cmd: tar xfz singularity-ce-3.9.7.tar.gz -C /root/trial/dep/go/apps/src/github.com/syslabs
 
   - name: config singularity
     shell:
       chdir: /root/trial/dep/go/apps/src/github.com/syslabs/singularity-ce-3.9.7
-      cmd: bash ./mconfig --prefix="/root/trial/singularity/"
+      cmd: source ./mconfig --prefix="/root/trial/singularity/"
 
-  - name: install singularity
-    shell: |
-      cd /root/trial/dep/go/apps/src/github.com/syslabs/singularity-ce-3.9.7/builddir
-      make
-      sudo make install
+  - name: install singularity [1/2]
+    shell:
+      chdir: /root/trial/dep/go/apps/src/github.com/syslabs/singularity-ce-3.9.7/builddir
+      cmd: make
+      
+  - name: install singularity [2/2]
+    shell:
+      chdir: /root/trial/dep/go/apps/src/github.com/syslabs/singularity-ce-3.9.7/builddir
+      cmd: sudo make install
