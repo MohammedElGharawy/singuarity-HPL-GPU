@@ -1,0 +1,14 @@
+#%Module1.0#####################################################################
+##
+## go modulefile
+##
+proc ModulesHelp { } {
+        puts stderr "\tSets up environment for official Go release\n"
+}
+
+module-whatis   "sets up environment for official Go release"
+
+setenv	GOPATH	 /root/trial/dep/go/apps	
+prepend-path     PATH    /root/trial/dep/go/apps/bin:/root/trial/dep/go/bin
+
+conflict go
