@@ -1,0 +1,11 @@
+#%Module1.0#####################################################################
+##
+## squashfs-tools modulefile
+##
+proc ModulesHelp { } {
+        puts stderr "\tSets up environment for squashfs-tools 4.5.1\n"
+}
+
+module-whatis   "sets up environment for squashfs-tools 4.5.1"
+
+prepend-path     PATH    /root/trial/dep/4.5.1/bin
