@@ -19,3 +19,6 @@ singularity: singularity-ce-3.9.7.tar.gz
 
 
 Benchmark container: hpc-benchmarks:21.4-hpl.sif
+
+
+you can find the dependecies in this link: https://brightskiesinc0-my.sharepoint.com/:f:/g/personal/mohamed_elgharawy_brightskiesinc_com/Eg6WDdGoSVJAoF6fSLFKSIkBVDYbanEVYMsH9s5VNMxAAw?e=2RaNeQ
