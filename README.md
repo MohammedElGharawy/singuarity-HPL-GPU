@@ -16,3 +16,6 @@ squashfs-tools: 4.5.1.tar.gz
 
 
 singularity: singularity-ce-3.9.7.tar.gz
+
+
+Benchmark container: hpc-benchmarks:21.4-hpl.sif
