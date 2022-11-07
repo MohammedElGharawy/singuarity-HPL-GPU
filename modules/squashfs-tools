@@ -8,4 +8,4 @@ proc ModulesHelp { } {
 
 module-whatis   "sets up environment for squashfs-tools 4.5.1"
 
-prepend-path     PATH    /root/trial/dep/4.5.1/bin
+prepend-path     PATH    <insert path to squashfs-tools bin>
